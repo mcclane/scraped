@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"4e34bbaf17",applicationID:"4513637"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta charset="UTF-8" />
+<meta http-equiv="content-language" content="en" />
+<link rel="shortcut icon" href="https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/common/images_html/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="initial-scale=1" />
+<meta name="description" content="On-Campus COVID-19 Testing Updated Sept. 24, 10:00 a.m. Data updated Monday through Friday." />
+<link rel="canonical" href="https://coronavirus.calpoly.edu/dashboard" />
+<meta property="og:site_name" content="Coronavirus Information" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://coronavirus.calpoly.edu/dashboard" />
+<meta property="og:title" content="Dashboard | Coronavirus Information" />
+<meta property="og:description" content="On-Campus COVID-19 Testing Updated Sept. 24, 10:00 a.m. Data updated Monday through Friday." />
+<meta name="dcterms.title" content="Dashboard | Coronavirus Information" />
+<meta name="dcterms.description" content="On-Campus COVID-19 Testing Updated Sept. 24, 10:00 a.m. Data updated Monday through Friday." />
+<meta name="dcterms.type" content="Text" />
+<meta name="dcterms.format" content="text/html" />
+  <title>Dashboard - Coronavirus Information - Cal Poly, San Luis Obispo</title>
+  <style type="text/css" media="all">
+@import url("https://coronavirus.calpoly.edu/modules/system/system.base.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/system/system.menus.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/system/system.messages.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/system/system.theme.css?qg3cqe");
+</style>
+<style type="text/css" media="all">
+@import url("https://coronavirus.calpoly.edu/modules/aggregator/aggregator.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/comment/comment.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/field/theme/field.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/node/node.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/search/search.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/modules/user/user.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/modules/views/css/views.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/modules/ckeditor/css/ckeditor.css?qg3cqe");
+</style>
+<style type="text/css" media="all">
+@import url("https://coronavirus.calpoly.edu/sites/all/modules/ctools/css/ctools.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/modules/tableofcontents/tableofcontents.css?qg3cqe");
+</style>
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CVollkorn:400italic,400" media="all" />
+<style type="text/css" media="all">
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/common/css/cp_style.min.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/common/css/font-awesome.min.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/common/css/jquery-ui.min.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/css/cp_custom.css?qg3cqe");
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/css/honeypot.css?qg3cqe");
+</style>
+<style type="text/css" media="print">
+@import url("https://coronavirus.calpoly.edu/sites/all/themes/cpstandard_r/common/css/cp_print.min.css?qg3cqe");
+</style>
+  <script type="text/javascript" src="https://coronavirus.calpoly.edu/sites/coronavirus.calpoly.edu/files/js/js_Ua98zxjH9I2U2rTee9IFt0Bz0daoaQQTSnaDxCxt3Kc.js"></script>
+<script type="text/javascript" src="https://coronavirus.calpoly.edu/sites/coronavirus.calpoly.edu/files/js/js_-zpHfuGV_8VVwgRhy2PKeQaVJAtxKrM3J3ALmgmc1PQ.js"></script>
+<script type="text/javascript" src="https://coronavirus.calpoly.edu/sites/coronavirus.calpoly.edu/files/js/js_WWhVW4pQhnmTOSLcOKDvwsn46ku5GzgbdfDowegLNwo.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"cpstandard_r","theme_token":"E7hQpSudZxl51UyXc6TzuW-SBddzldoIRcmRGt4YE-A","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/tableofcontents\/jquery.scrollTo-min.js":1,"sites\/all\/modules\/tableofcontents\/jquery.localscroll-min.js":1,"sites\/all\/modules\/tableofcontents\/tableofcontents.js":1,"sites\/all\/themes\/cpstandard_r\/common\/js\/jquery-1.11.3.min.js":1,"sites\/all\/themes\/cpstandard_r\/common\/js\/jquery-ui.min.js":1,"sites\/all\/themes\/cpstandard_r\/common\/js\/noconflict.js":1,"sites\/all\/themes\/cpstandard_r\/common\/js\/calpoly.min.js":1,"sites\/all\/themes\/cpstandard_r\/common\/js\/_accordion.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/tableofcontents\/tableofcontents.css":1,"\/\/fonts.googleapis.com\/css?family=Open+Sans:400,600%7CVollkorn:400italic,400":1,"sites\/all\/themes\/cpstandard_r\/common\/css\/cp_style.min.css":1,"sites\/all\/themes\/cpstandard_r\/common\/css\/font-awesome.min.css":1,"sites\/all\/themes\/cpstandard_r\/common\/css\/jquery-ui.min.css":1,"sites\/all\/themes\/cpstandard_r\/css\/cp_custom.css":1,"sites\/all\/themes\/cpstandard_r\/css\/honeypot.css":1,"sites\/all\/themes\/cpstandard_r\/common\/css\/cp_print.min.css":1}},"tableOfContents":{"boxSettings":{"hideText":"hide","showText":"show"}}});
+//--><!]]>
+</script>
+  <!-- Global Site Tag (gtag.js) - Google Analytics --> 
+<!-- Google Analytics - contact Cal Poly University Marketing for access to GA data --> 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-102181678-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script></head>
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-68 node-type-page" >
+    <!--Header Content for Analytics-->
+  <div id="header-blocks" class="region region-header-content">
+        <div id="block-block-7" class="block block-block " >
+<p><br /><!-- Add your analytics script here e.g. Google Analytics --><!-- If you don't want to use analytics, just ignore this block --></p></div>
+
+  </div>
+
+<div id="wrapper">
+  
+  <header>
+    <div id="accessibilityNav"><ul><li><a href="#topH1" id="skip" title="skip to content">Skip to Content</a></li><li><a href="https://www.calpoly.edu/help.html" id="helpLink" title="help">?</a></li></ul></div>    <div id="audienceNav"></div>    <hr>
+    <div id="myCalPolyNav"><a href="https://my.calpoly.edu" id="login" title="my CalPoly login">my CalPoly login</a></div>    <div id="utilityNav"><ul><li id="maps"><a href="https://maps.calpoly.edu/" title="">Maps</a></li>
+<li id="searchli"><div id="search"><form method="get" title="Search Form" action="https://www.calpoly.edu/search/?q=">
+	<div>
+		<input id="searchField" type="text" maxlength="256" placeholder="Search" title="Search this site" name="q" alt="Search Text" />
+		<input id="searchSubmit" type="image" name="submit" title="Submit Search Query" alt="Go" src="/sites/all/themes/cpstandard_r/common/images_html/header/search-arrow.png" />
+	</div>
+</form></div></li></ul></div>          
+    <div id="headerContent">
+      <div id="headerTop">
+        <div id="cplogo">
+          <a href="https://www.calpoly.edu/" >
+            <img title="Go to Cal Poly Home" alt="Cal Poly" src="/sites/all/themes/cpstandard_r/common/images_html/header/cplogo.svg">
+          </a>
+        </div>
+
+        <div id="mobileNavDept">
+          <div id="mobileIcons">
+          </div>
+        </div>
+      </div>
+
+      <div id="mobileNav">
+        <ul id="mobileMenu" style="display: none;">
+        </ul>
+        <ul id="mobileSearch" style="display: none;"><li id="searchli"><div id="search"><form method="get" title="Search Form" action="https://www.calpoly.edu/search/?q=">
+	<div>
+		<input id="searchField" type="text" maxlength="256" placeholder="Search" title="Search this site" name="q" alt="Search Text" />
+		<input id="searchSubmit" type="image" name="submit" title="Submit Search Query" alt="Go" src="/sites/all/themes/cpstandard_r/common/images_html/header/search-arrow.png" />
+	</div>
+</form></div></li></ul>
+      </div><!-- end #mobileNav -->
+
+      <div id="headerBottom">
+        <div id="deptName"><h2><a href="/">Coronavirus Information</a></h2><h3></h3></div>
+      </div>
+    </div>
+        </header>
+
+  <nav>
+    <ul id="cpUl" class="cpStandardNav"><li><a href="/">Home</a></li>
+<li><a href="https://www.calpoly.edu/roadmap/academic-instruction">Virtual Learning</a></li>
+<li><a href="https://guidebook.com/g/gbwfhmikvi-20200402231623/">Student Experience</a></li>
+<li><a href="/frequently-asked-questions">Frequently Asked Questions</a></li>
+</ul>  </nav>
+
+  
+  
+  <!-- Old Breadcrumb Processing -->
+    <div id="breadcrumb"><a href="/health-and-wellness" title="">Health and Wellbeing</a></div>
+          <div id="rightCol">
+        <div id="block-menu-menu-sample-menu-1" class="block block-menu " >
+  <h2>Detailed Information</h2>
+<ul><li class="first leaf"><a href="/checklist" title="">Student Fall 2020 Checklist</a></li>
+<li class="expanded active-trail"><a href="/health-and-wellness" title="" class="active-trail">Health and Wellbeing</a><ul><li class="first leaf active-trail"><a href="/dashboard" title="" class="active-trail active">On-Campus Testing Dashboard</a></li>
+<li class="leaf"><a href="/covid-19-self-screening" title="">COVID-19 Self-Screening</a></li>
+<li class="leaf"><a href="/covid-19-testing" title="">Covid-19 Testing</a></li>
+<li class="leaf"><a href="/student-quarantine-and-isolation" title="">Quarantine and Isolation Guide</a></li>
+<li class="leaf"><a href="/prevention-0" title="">Prevention</a></li>
+<li class="leaf"><a href="/student-care-resources" title="">Student Care Resources</a></li>
+<li class="leaf"><a href="/inclusion-resources" title="">Inclusion Resources</a></li>
+<li class="last leaf"><a href="/SLO-community-resources" title="">Community Resources</a></li>
+</ul></li>
+<li class="expanded"><a href="/campus-operations" title="">Campus Operations</a><ul><li class="first leaf"><a href="/campus-events" title="">Campus Events</a></li>
+<li class="leaf"><a href="/campus-updates" title="">Campus Updates</a></li>
+<li class="last leaf"><a href="https://coronavirus.calpoly.edu/directory-services" title="">Directory of Services</a></li>
+</ul></li>
+<li class="last expanded"><a href="/guidelines-and-resources" title="">Guidelines and Resources</a><ul><li class="first leaf"><a href="/financial-aid" title="">Financial Aid</a></li>
+<li class="leaf"><a href="/housing-and-dining" title="">Housing, Dining, and Parking</a></li>
+<li class="leaf"><a href="/human-resources" title="">Human Resources</a></li>
+<li class="leaf"><a href="https://universitymarketing.calpoly.edu/trademark-licensing/cal-poly-face-coverings/" title="">Ordering Face Coverings</a></li>
+<li class="last leaf"><a href="/travel-and-study-abroad" title="">Travel and Study Abroad</a></li>
+</ul></li>
+</ul></div>
+
+    </div>
+    
+    <main id="">
+      <a id="topH1"></a>
+                  <div id="contentLine"></div>            
+      <!-- Old Page Title Processing
+              <h1 class="page-title"></h1>
+            -->
+      
+      <div id="mainLeftFull"><div id="contentHeader"><h1 class="page-title">Dashboard</h1></div>    <div id="block-system-main" class="block block-system " >
+
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2 class="h2_heavy" id="On-Campus_COVID-19_Testing">On-Campus COVID-19 Testing</h2>
+
+<p><em><strong>Updated Sept. 24, 10:00 a.m.</strong><br />
+Data updated Monday through Friday.</em></p>
+
+<h2 class="subtitle" id="CAMPUS_TESTING_UPDATE">CAMPUS TESTING UPDATE</h2>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>Total tests performed by Campus Health and Wellbeing (since July 8, 2020)</td>
+			<td>3,822</td>
+		</tr><tr><td>Total tests by CHW in prior 24-hour period</td>
+			<td>153</td>
+		</tr><tr><td>Total positive tests of on-campus student residents (since July 8, 2020)</td>
+			<td>10</td>
+		</tr><tr><td>New positive tests of on-campus student residents (last 24 hours)</td>
+			<td>0</td>
+		</tr><tr><td>Total positive tests of off-campus student residents (since July 8, 2020)</td>
+			<td>88</td>
+		</tr><tr><td>New positive tests of off-campus student residents (last 24 hours)</td>
+			<td>1</td>
+		</tr><tr><td>Total recovered cases for on-campus student residents (since Sept. 3)</td>
+			<td>5</td>
+		</tr><tr><td>New recovered cases for on-campus student residents (last 24 hours)</td>
+			<td>0</td>
+		</tr><tr><td>Currently hospitalized on-campus student residents</td>
+			<td>0</td>
+		</tr></tbody></table><p>Cal Poly provides COVID-19 testing through its Campus Health and Wellbeing only to currently enrolled students. These numbers reflect only positive cases identified directly through Campus Health and Wellbeing. Students can also access testing off campus.</p>
+
+<p>The university does not offer testing to employees. Employees who test positive for COVID-19 are reflected in countywide and community-specific statistics (for their community of residence), available at the <a href="https://www.emergencyslo.org/en/covid19.aspx">San Luis Obispo County Public Health Department webpage</a>.</p>
+
+<h2 class="subtitle" id="ISOLATION">ISOLATION</h2>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>Total on-campus resident students currently in isolation</td>
+			<td>7</td>
+		</tr><tr><td>New on-campus resident students in isolation (last 24 hours)</td>
+			<td>0</td>
+		</tr><tr><td>Remaining Isolation/Quarantine Beds Available</td>
+			<td>169</td>
+		</tr></tbody></table><p>Students who test positive for COVID-19 are placed in isolation in on-campus University Housing facilities and provided with direct dining, laundry and other support services. Per the CDC, an individual who has tested positive can leave isolation if it has been 10 days since their symptoms first appeared, they haven’t had a fever in at least 24 hours without the use of fever-reducing medications, and their symptoms have improved.</p>
+
+<h2 class="subtitle" id="QUARANTINE">QUARANTINE</h2>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>Total on-campus resident students currently in quarantine</td>
+			<td>13</td>
+		</tr><tr><td>New on-campus resident students in quarantine (last 24 hours)</td>
+			<td>0</td>
+		</tr></tbody></table><p>Students who have been exposed to someone with COVID-19 must self-quarantine for 14 days by county health order.</p>
+
+<h2 class="subtitle" id="QUARANTINE_IN_PLACE">QUARANTINE IN PLACE</h2>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>Total on-campus resident students currently in quarantine in place</td>
+			<td>132</td>
+		</tr><tr><td>New on-campus resident students in quarantine in place (last 24 hours)</td>
+			<td>3</td>
+		</tr></tbody></table><p>In the event of possible exposures in University Housing facilities, the university can, as a precaution, place floors or sections of buildings on “Quarantine in Place” for 14 days, in consultation with San Luis Obispo County Department of Public Health.</p>
+
+<p>→ Learn more about Cal Poly’s <a href="https://coronavirus.calpoly.edu/student-quarantine-and-isolation">Isolation and Quarantine</a> procedures.</p></div></div></div></div>
+
+<h2 id="relatedLinksTitle">Related Content</h2><div id="relatedLinksBottom"></div></div>
+      <div class="clear"></div>
+          </main>
+
+    <div class="clear"></div>
+
+        
+  <footer>
+        
+      <ul id="footer_links">
+        <li><a href="https://www.calpoly.edu/">CP Home</a></li>
+        <li><a href="https://www.calpoly.edu/atoz/">Directory</a></li>
+        <li><a href="https://maps.calpoly.edu/">Campus Maps &amp; Directions</a></li>
+        <li><a href="https://www.bkstr.com/calpolystore">University Store</a></li>
+        <li><a href="https://registrar.calpoly.edu/acad_cal/">Calendar</a></li>
+        <li><a href="https://afd.calpoly.edu/hr/job-opportunities/">Employment</a></li>
+        <li><a href="https://policy.calpoly.edu/">Campus Policies</a></li>
+        <li><a href="https://www.calpoly.edu/contact/">Contact Us</a></li>
+      </ul>
+
+<div id="getPlugins">
+      <ul>
+        <li><a href="https://www.calpoly.edu/privacy/">Privacy Notice</a></li>
+        <li><a href="https://accessibility.calpoly.edu/website-accessibility-statement">Web Accessibility Statement</a></li>
+      </ul>
+</div>
+
+<div id="footer_deptinfo">
+  <p>&#169; 2020 California Polytechnic State University &nbsp;<img src="/sites/all/themes/cpstandard_r/common/images_html/footer/footer_separator.jpg" alt="" height="10" width="1" />&nbsp; San Luis Obispo, California 93407<br>Phone: 805-756-1111</p>
+</div>
+
+      </footer>
+
+      <div class="clear"></div>
+</div>
+
+<div id="closure-blocks" class="region region-closure">
+    <div id="block-block-8" class="block block-block " >
+<p><br /><!-- Add your analytics script here e.g. CrazyEgg --><!-- If you don't want to use analytics, just ignore this block --></p></div>
+
+</div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4e34bbaf17","applicationID":"4513637","transactionName":"YldTYBRYXUVVURdZXFsdZEYPFlpYUFcbHkNdQg==","queueTime":0,"applicationTime":43,"atts":"ThBQFlxCTks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+<script>(function trackOutbounds(){var hitCallbackHandler=function(url,win){if(win){window.open(url,win)}else{window.location.href=url}};var addEvent=function(el,eventName,handler){if(el.addEventListener){el.addEventListener(eventName,handler)}else{el.attachEvent('on'+eventName,function(){handler.call(el)})}}
+if(document.getElementsByTagName){var el=document.getElementsByTagName('a');var getDomain=document.domain.split('.').reverse()[1]+'.'+document.domain.split('.').reverse()[0];for(var i=0;i<el.length;i++){var href=(typeof(el[i].getAttribute('href'))=='string')?el[i].getAttribute('href'):'';var myDomain=href.match(getDomain);if((href.match(/^(https?:|\/\/)/i)&&!myDomain)||href.match(/^mailto\:/i)){addEvent(el[i],'click',function(e){var url=this.getAttribute('href'),win=(typeof(this.getAttribute('target'))=='string')?this.getAttribute('target'):'';console.log("add event",url);ga('send','event','outbound','click',url,{'hitCallback':hitCallbackHandler(url,win)},{'nonInteraction':1});e.preventDefault()})}}}})();</script>
+</html>
